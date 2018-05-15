@@ -1,0 +1,633 @@
+/* *************************************************************************
+*                 The North Star: Settings for ProfitTrailer 2             *
+****************************************************************************
+* Developers:     Discord @stevenshizzle#8860 / Telegram @stevenshizzle    *
+*                 Discord @cabbage#4164                                    *
+* Contributors:   @smoochy#6365 (disc) @fransenson#5625 (disc)             *
+*                 @samueldc (tel)                                          *
+* Thanks:         theWolfsofCrypto (tinyurl.com/WolfsOfCrypto)             *
+* Tested With:    ProfitTrailer 2.0.3 / PTMagic 1.6.1                      *
+* URL:            www.thenorthstarsettings.com                             *
+* File:           PTM settings.analyzer.json                               *
+* Last Update:    v2.2.0 - 16 MAY 2018                                     *
+************************************************************************* */
+
+/* ********* Change only via text editor -- NOT via PTMagic GUI ********* */ 
+//Personal Settings
+{
+    "AnalyzerSettings": {
+    "MarketAnalyzer": {
+      "StoreDataMaxHours": 144,
+      "IntervalMinutes": 5,
+      "ExcludeMainCurrency": false,
+      "MarketTrends": [
+        {
+          "Name": "BTC5m",
+          "Platform": "Exchange",
+          "AllowedMarkets": "BTC",
+          "MaxMarkets": 1,
+          "TrendMinutes": 5,
+          "DisplayOnMarketAnalyzerList": true,
+          "DisplayGraph": false
+        },
+		  {
+          "Name": "ETH15m",
+          "Platform": "Exchange",
+          "AllowedMarkets": "ETH",
+          "MaxMarkets": 1,
+          "TrendMinutes": 15,
+          "DisplayOnMarketAnalyzerList": false,
+          "DisplayGraph": false
+        },
+		{
+          "Name": "Exchange5m",
+          "Platform": "Exchange",
+          "MaxMarkets": 50,
+          "TrendMinutes": 5,
+          "DisplayOnMarketAnalyzerList": true,
+          "DisplayGraph": false
+        },
+		{
+          "Name": "Exchange10m",
+          "Platform": "Exchange",
+          "MaxMarkets": 50,
+          "TrendMinutes": 10,
+          "DisplayOnMarketAnalyzerList": true,
+          "DisplayGraph": false
+        },
+		{
+          "Name": "Exchange15m",
+          "Platform": "Exchange",
+          "MaxMarkets": 50,
+          "TrendMinutes": 15,
+          "DisplayOnMarketAnalyzerList": true,
+          "DisplayGraph": false
+        },
+           {
+          "Name": "BTC15m",
+          "Platform": "Exchange",
+          "AllowedMarkets": "BTC",
+          "MaxMarkets": 1,
+          "TrendMinutes": 15,
+          "DisplayOnMarketAnalyzerList": false,
+          "DisplayGraph": false
+        },
+           {
+          "Name": "ETH3h",
+          "Platform": "Exchange",
+          "AllowedMarkets": "ETH",
+          "MaxMarkets": 1,
+          "TrendMinutes": 180,
+          "DisplayOnMarketAnalyzerList": false,
+          "DisplayGraph": false
+        },
+// Default from NS - Changed MainCurrency wording to BTC
+        {
+          "Name": "BTC3h",
+          "Platform": "Exchange",
+          "AllowedMarkets": "BTC",
+          "MaxMarkets": 1,
+          "TrendMinutes": 180,
+          "DisplayOnMarketAnalyzerList": false,
+          "DisplayGraph": false
+        },
+        {
+          "Name": "BTC24h",
+          "Platform": "Exchange",
+          "AllowedMarkets": "BTC",
+          "MaxMarkets": 1,
+          "TrendMinutes": 1440
+        },
+        {
+          "Name": "Exchange30m",
+          "Platform": "Exchange",
+          "MaxMarkets": 50,
+          "TrendMinutes": 30,
+          "DisplayOnMarketAnalyzerList": false,
+          "DisplayGraph": false
+        },
+        {
+          "Name": "Exchange1h",
+          "Platform": "Exchange",
+          "MaxMarkets": 50,
+          "TrendMinutes": 60
+        },
+        {
+          "Name": "Exchange3h",
+          "Platform": "Exchange",
+          "MaxMarkets": 50,
+          "TrendMinutes": 180,
+          "DisplayOnMarketAnalyzerList": false,
+          "DisplayGraph": false
+        },
+        {
+          "Name": "Exchange6h",
+          "Platform": "Exchange",
+          "MaxMarkets": 50,
+          "TrendMinutes": 360,
+          "DisplayOnMarketAnalyzerList": false,
+          "DisplayGraph": false
+        },
+        {
+          "Name": "Exchange11h",
+          "Platform": "Exchange",
+          "MaxMarkets": 50,
+          "TrendMinutes": 660
+        },
+        {
+          "Name": "Exchange15h",
+          "Platform": "Exchange",
+          "MaxMarkets": 50,
+          "TrendMinutes": 900,
+          "DisplayOnMarketAnalyzerList": false,
+          "DisplayGraph": false
+        },
+        {
+          "Name": "Exchange18h",
+          "Platform": "Exchange",
+          "MaxMarkets": 50,
+          "TrendMinutes": 1080,
+          "DisplayOnMarketAnalyzerList": false,
+          "DisplayGraph": false
+        },
+        {
+          "Name": "Exchange21h",
+          "Platform": "Exchange",
+          "MaxMarkets": 50,
+          "TrendMinutes": 1260,
+          "DisplayOnMarketAnalyzerList": false,
+          "DisplayGraph": false
+        },
+        {
+          "Name": "Exchange24h",
+          "Platform": "Exchange",
+          "MaxMarkets": 50,
+          "TrendMinutes": 1440
+        }
+      ]
+    },
+    "GlobalSettings": [
+      //BTC UP Trend Settings
+      {
+        "SettingName": "BTCOrCoinSkyRocketing",
+        "TriggerConnection": "OR",
+        "Triggers": [
+          {
+            "MarketTrendName": "Exchange3h",
+            "MinChange": 3.0
+          },
+          {  
+            "MarketTrendName": "Exchange24h",
+            "MinChange": 5.0
+          },
+          {
+            "MarketTrendName": "BTC3h",
+            "MinChange": 3.0
+          },
+          {
+            "MarketTrendName": "BTC24h",
+            "MinChange": 3.0,
+          }
+        ],
+        "PairsProperties": {
+          //User Configuration Needed
+            "DEFAULT_sell_only_mode_enabled": false,
+            "max_trading_pairs": 4,
+        //Are we at the bottom of the trade cycle?
+            "DEFAULT_A_buy_strategy": "LOWBB",
+            "DEFAULT_A_buy_value": 10,
+            "DEFAULT_A_buy_value_limit": 0,
+        //Have we confirmed we are at the bottom of the Trade Cycle?
+            "DEFAULT_B_buy_strategy": "RSI",
+            "DEFAULT_B_buy_value": 20,
+            "DEFAULT_B_buy_value_limit": 0,
+        //Trailing should take us the rest of the way to the bottom of the Trade Cycle
+            "DEFAULT_trailing_buy": 0.75,
+        //Rebuy timeout setting
+        //Set the amount of minutes that the bot is not allowed to buy a coin after it was sold.
+            "DEFAULT_rebuy_timeout": 10,
+            "DEFAULT_A_sell_strategy": "GAIN",
+            "DEFAULT_A_sell_value": 2.0
+            },
+        "DCAProperties": {
+            "DEFAULT_DCA_ignore_sell_only_mode": false
+            }
+      },
+    //BTC Down Trend Settings
+      {
+        "SettingName": "Sideways Settings",
+        "TriggerConnection": "OR",
+        "Triggers": [ 
+          {
+            "MarketTrendName": "Exchange3h",
+            "MaxChange": 2.99,
+            "MinChage": -1.99
+          },
+          {
+            "MarketTrendName": "Exchange24h",
+            "MaxChange": 4.99,
+            "MinChage": -1.99
+          },
+          {
+            "MarketTrendName": "BTC3h",
+            "MaxChange": 2.99,
+            "MinChage": -1.99
+          },
+          {
+            "MarketTrendName": "BTC24h",
+            "MaxChange": 1.0,
+            "MinChange": -2.0
+          }
+        ],
+        "PairsProperties": {
+          //User Configuration Needed
+            "DEFAULT_sell_only_mode_enabled": false,
+            "max_trading_pairs": 4,
+          
+    //BUY STRATEGY
+        //Do we have a Buy Signal?
+            "DEFAULT_A_buy_strategy": "EMACROSS",
+            "DEFAULT_A_buy_value": -0.01,
+            "DEFAULT_A_buy_value_limit": -10,
+        //Do we have enough volume to support the buy?
+            "DEFAULT_B_buy_strategy": "OBV",
+            "DEFAULT_B_buy_value": -0.001,
+            "DEFAULT_B_buy_value_limit": 0.075,
+        //Do we have a strong trend?
+            "DEFAULT_C_buy_strategy": "EMASPREAD",
+            "DEFAULT_C_buy_value": -0.01,
+            "DEFAULT_C_buy_value_limit": -3,
+        //Have we confirmed we are at the bottom of the Trade Cycle?
+            "DEFAULT_D_buy_strategy": "RSI",
+            "DEFAULT_D_buy_value": 50,
+            "DEFAULT_D_buy_value_limit": 0.0,
+        //Trailing should take us the rest of the way to the bottom of the Trade Cycle
+            "DEFAULT_trailing_buy": 0.3
+            },
+            "DCAProperties": {
+            "DEFAULT_DCA_ignore_sell_only_mode": false
+            }
+        },
+        {
+        "SettingName": "BTCDOWNTrendCritical",
+        "TriggerConnection": "OR",
+        "Triggers": [
+          {
+            "MarketTrendName": "BTC24h",
+            "MaxChange": -3.0
+          },
+          {
+            "MarketTrendName": "BTC5m_average",
+            "MaxChange": -1.0
+          },  
+          {
+            "MarketTrendName": "BTC3h",
+            "MaxChange": -2.0
+          },
+        ],
+        "PairsProperties": {
+    //SELL STRATEGY
+            "DEFAULT_A_sell_strategy": "GAIN",
+            "DEFAULT_A_sell_value": 0.3,
+            "DEFAULT_trailing_profit": 0.01,
+    
+        //SOM
+            "DEFAULT_sell_only_mode_enabled": true
+            },
+            "DCAProperties": {
+            "DEFAULT_DCA_ignore_sell_only_mode": false,
+            "DEFAULT_DCA_enabled": false
+            }
+        },
+      {
+        "SettingName": "ExchangeTop50Downtrend",
+        "TriggerConnection": "OR",
+        "Triggers": [
+          {
+            "MarketTrendName": "Exchange1h",
+            "MaxChange": -2.50
+          },
+          {
+            "MarketTrendName": "Exchange3h",
+            "MaxChange": -2.64
+          },
+          {
+            "MarketTrendName": "Exchange6h",
+            "MaxChange": -2.85
+          },
+          {
+            "MarketTrendName": "Exchange11h",
+            "MaxChange": -4.00
+          },
+          {
+            "MarketTrendName": "Exchange15h",
+            "MaxChange": -4.00
+          },
+          {
+            "MarketTrendName": "Exchange18h",
+            "MaxChange": -4.00
+          },
+          {
+            "MarketTrendName": "Exchange21h",
+            "MaxChange": -4.00
+          },
+          {
+            "MarketTrendName": "Exchange24h",
+            "MaxChange": -4.00
+          }
+        ],
+        "PairsProperties": {
+          //User Configuration Needed
+          //User Configuration Needed
+            "DEFAULT_sell_only_mode_enabled": false,
+            "max_trading_pairs": 4,
+          
+    //BUY STRATEGY
+        //Do we have a Buy Signal?
+            "DEFAULT_A_buy_strategy": "EMACROSS",
+            "DEFAULT_A_buy_value": -0.01,
+            "DEFAULT_A_buy_value_limit": -10,
+        //Do we have enough volume to support the buy?
+            "DEFAULT_B_buy_strategy": "OBV",
+            "DEFAULT_B_buy_value": -0.001,
+            "DEFAULT_B_buy_value_limit": 0.075,
+        //Do we have a strong trend?
+            "DEFAULT_C_buy_strategy": "EMASPREAD",
+            "DEFAULT_C_buy_value": -0.01,
+            "DEFAULT_C_buy_value_limit": -3,
+        //Have we confirmed we are at the bottom of the Trade Cycle?
+            "DEFAULT_D_buy_strategy": "RSI",
+            "DEFAULT_D_buy_value": 50,
+            "DEFAULT_D_buy_value_limit": 0.0,
+        //Trailing should take us the rest of the way to the bottom of the Trade Cycle
+            "DEFAULT_trailing_buy": 0.3
+        },
+        "DCAProperties": {
+          "DEFAULT_DCA_ignore_sell_only_mode": false
+        }
+      },
+      {
+        "SettingName": "Default",
+        "Triggers": [],
+        "PairsProperties": {
+        "File": "PAIRS.properties",
+        },
+        "DCAProperties": {
+          "File": "DCA.properties"
+        },
+        "IndicatorsProperties": {
+          "File": "INDICATORS.properties"
+        }
+      }
+    ],
+//SINGLE MARKET SETTINGS
+    "SingleMarketSettings": [
+       {
+        "SettingName": "SOMCoins",
+        "TriggerConnection": "AND",
+	    "OffTriggerConnection": "OR",
+        "StopProcessWhenTriggered": true,
+        "Triggers": [
+            {
+            "MarketTrendName": "Exchange24h",
+            "MarketTrendRelation": "Absolute",
+            "MaxChange": -3.99
+            }             
+        ],
+        "OffTriggers": [
+        {
+          "MarketTrendName": "BTC5m",
+          "MarketTrendRelation": "Absolute",
+          "MinChange": 0.0
+        },
+        {
+          "MarketTrendName": "Exchange5m",
+          "MarketTrendRelation": "Absolute",
+          "MinChange": 0.0
+        }	
+        ],
+        "PairsProperties": {
+            "DCA_enabled": false,
+            "sell_only_mode_enabled": true,
+            "A_sell_value": 0.4,
+            "trailing_profit": 0.01
+            },
+        "DCAProperties": {
+            "DCA_trailing_profit": 0.01
+            }
+        },
+        {
+        "SettingName": "BlacklistNewCoins",
+        "StopProcessWhenTriggered": true,
+        "Triggers": [
+          {
+            "AgeDaysLowerThan": 5
+          }
+        ],
+        "PairsProperties": {
+          "trading_enabled": false,
+          "sell_only_mode_enabled": true,
+          "DCA_enabled": false
+          }
+        },
+      {
+        "SettingName": "DowntrendingPair",
+        "TriggerConnection": "OR",
+        "StopProcessWhenTriggered": false,
+        "Triggers": [
+            {
+            "MarketTrendName": "Exchange6h",
+	        "MarketTrendRelation": "Absolute",
+            "MaxChange": -2.85
+            },
+            {
+            "MarketTrendName": "Exchange11h",
+	        "MarketTrendRelation": "Absolute",
+            "MaxChange": -4.00
+            },
+            {
+            "MarketTrendName": "Exchange15h",
+	        "MarketTrendRelation": "Absolute",
+            "MaxChange": -4.00
+            },
+            {
+            "MarketTrendName": "Exchange18h",
+	        "MarketTrendRelation": "Absolute",
+            "MaxChange": -4.00
+            },
+            {
+            "MarketTrendName": "Exchange21h",
+	        "MarketTrendRelation": "Absolute",
+            "MaxChange": -4.00
+            },
+            {
+            "MarketTrendName": "Exchange24h",
+	        "MarketTrendRelation": "Absolute",
+            "MaxChange": -4.00
+            }          
+        ],
+        "OffTriggers": [],
+        "PairsProperties": {  
+    //BUY STRATEGY
+        //Do we have a Buy Signal?
+            "A_buy_strategy": "EMACROSS",
+            "A_buy_value": -0.01,
+            "A_buy_value_limit": -10,
+        //Do we have enough volume to support the buy?
+            "B_buy_strategy": "OBV",
+            "B_buy_value": -0.001,
+            "B_buy_value_limit": 0.075,
+        //Do we have a strong trend?
+            "C_buy_strategy": "EMASPREAD",
+            "C_buy_value": -0.01,
+            "C_buy_value_limit": -3,
+        //Have we confirmed we are at the bottom of the Trade Cycle?
+            "D_buy_strategy": "RSI",
+            "D_buy_value": 50,
+            "D_buy_value_limit": 0.0,
+        //Trailing should take us the rest of the way to the bottom of the Trade Cycle
+            "trailing_buy": 0.3
+            }
+        },
+        {
+        "SettingName": "SkyRocketingPair",
+        "TriggerConnection": "OR",
+        "StopProcessWhenTriggered": false,
+        "Triggers": [
+            {
+            "MarketTrendName": "Exchange10m",
+            "MarketTrendRelation": "Absolute",
+            "MinChange": 2.0
+            },
+            {
+            "MarketTrendName": "Exchange1h",
+            "MarketTrendRelation": "Absolute",
+            "MinChange": 2.0
+            }, 
+            {
+            "MarketTrendName": "Exchange3h",
+            "MarketTrendRelation": "Absolute",
+            "MinChange": 3.0
+            },  
+            {
+            "MarketTrendName": "Exchange6h",
+            "MarketTrendRelation": "Absolute",
+            "MinChange": 2.85
+            },
+            {
+            "MarketTrendName": "Exchange11h",
+            "MarketTrendRelation": "Absolute",
+            "MinChange": 2.00
+            },
+            {
+            "MarketTrendName": "Exchange15h",
+            "MarketTrendRelation": "Absolute",
+            "MinChange": 2.00
+            },
+            {
+            "MarketTrendName": "Exchange18h",
+            "MarketTrendRelation": "Absolute",
+            "MinChange": 4.00
+            },
+            {
+            "MarketTrendName": "Exchange21h",
+            "MarketTrendRelation": "Absolute",
+            "MinChange": 4.00
+            },
+            {
+            "MarketTrendName": "Exchange24h",
+            "MarketTrendRelation": "Absolute",
+            "MinChange": 4.00
+            }          
+        ],
+        "OffTriggers": [
+	       {
+           "MarketTrendName": "Exchange5m",
+           "MarketTrendRelation": "Absolute",
+           "MaxChange": 0.5
+	       }
+	   ],
+        "PairsProperties": {
+        //Are we at the bottom of the trade cycle?
+            "A_buy_strategy": "LOWBB",
+            "A_buy_value": 10,
+            "A_buy_value_limit": 0,
+        //Have we confirmed we are at the bottom of the Trade Cycle?
+            "B_buy_strategy": "RSI",
+            "B_buy_value": 20,
+            "B_buy_value_limit": 0,
+        //Trailing should take us the rest of the way to the bottom of the Trade Cycle
+            "trailing_buy": 0.75,
+        //Rebuy timeout setting
+        //Set the amount of minutes that the bot is not allowed to buy a coin after it was sold.
+            "rebuy_timeout": 10,
+            "A_sell_strategy": "GAIN",
+            "A_sell_value": 2.0
+            }
+        },
+        {
+        "SettingName": "MidSupportProfitAdj",
+        "TriggerConnection": "AND",
+        "StopProcessWhenTriggered": true,
+        "Triggers": [
+          {
+            "MarketTrendName": "Exchange1h",
+            "MarketTrendRelation": "Absolute",
+            "MinChange": -4.00
+          },        
+          {
+            "MarketTrendName": "Exchange6h",
+            "MarketTrendRelation": "Absolute",
+            "MinChange": 1.33
+          },
+          {
+            "MarketTrendName": "Exchange11h",
+            "MarketTrendRelation": "Absolute",
+            "MinChange": 2.66
+          },
+          {
+            "MarketTrendName": "Exchange24h",
+            "MarketTrendRelation": "Absolute",
+            "MinChange": 7.00
+          }                
+        ],
+        "OffTriggers": [],
+        "PairsProperties": {
+            "trailing_profit": 0.8
+            },
+        "DCAProperties": {
+            "DCA_trailing_profit": 0.50
+            }
+        },
+        {
+        "SettingName": "ShortSupportProfitAdj",
+        "TriggerConnection": "AND",
+        "StopProcessWhenTriggered": true,
+        "Triggers": [
+          {
+            "MarketTrendName": "Exchange30m",
+            "MarketTrendRelation": "Absolute",
+            "MinChange": -2.00
+          },
+          {
+            "MarketTrendName": "Exchange3h",
+            "MarketTrendRelation": "Absolute",
+            "MinChange": 2.00
+          },
+          {
+            "MarketTrendName": "Exchange11h",
+            "MarketTrendRelation": "Absolute",
+            "MinChange": 0.00
+          }             
+        ],
+        "OffTriggers": [],
+        "PairsProperties": {
+            "trailing_profit": 0.50
+            },
+        "DCAProperties": {
+            "DCA_trailing_profit": 0.42
+            }
+        } 
+    ]
+  }
+}
