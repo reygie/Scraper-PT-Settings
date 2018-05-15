@@ -81,7 +81,7 @@
           "DisplayOnMarketAnalyzerList": false,
           "DisplayGraph": false
         },
-        /* Default from NS - Changed "MainCurrency" wording to "BTC" */
+/* Default from NS - Changed "MainCurrency" wording to "BTC" */
         {
           "Name": "BTC3h",
           "Platform": "Exchange",
