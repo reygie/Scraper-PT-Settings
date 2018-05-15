@@ -450,7 +450,7 @@
       {
         "SettingName": "DowntrendingPair",
         "TriggerConnection": "OR",
-        "StopProcessWhenTriggered": false,
+        "StopProcessWhenTriggered": true,
         "Triggers": [
             {
             "MarketTrendName": "Exchange6h",
