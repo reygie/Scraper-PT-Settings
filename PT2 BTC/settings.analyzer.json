@@ -193,12 +193,14 @@
             "DEFAULT_B_buy_value": 20,
             "DEFAULT_B_buy_value_limit": 0,
         //Trailing should take us the rest of the way to the bottom of the Trade Cycle
-            "DEFAULT_trailing_buy": 0.75,
+            "DEFAULT_trailing_buy": 0.5,
+	    "DEFAULT_max_buy_spread": 1.0,
         //Rebuy timeout setting
         //Set the amount of minutes that the bot is not allowed to buy a coin after it was sold.
-            "DEFAULT_rebuy_timeout": 10,
+            "DEFAULT_rebuy_timeout": 5,
             "DEFAULT_A_sell_strategy": "GAIN",
-            "DEFAULT_A_sell_value": 2.0
+            "DEFAULT_A_sell_value": 2.0,
+	    "DEFAULT_trailing_profit": 0.8
             },
         "DCAProperties": {
             "DEFAULT_DCA_ignore_sell_only_mode": false
@@ -233,7 +235,7 @@
         "PairsProperties": {
           //User Configuration Needed
             "DEFAULT_sell_only_mode_enabled": false,
-            "max_trading_pairs": 4,
+            "max_trading_pairs": 2,
           
     //BUY STRATEGY
         //Do we have a Buy Signal?
@@ -253,9 +255,15 @@
             "DEFAULT_D_buy_value": 50,
             "DEFAULT_D_buy_value_limit": 0.0,
         //Trailing should take us the rest of the way to the bottom of the Trade Cycle
-            "DEFAULT_trailing_buy": 0.3
+            "DEFAULT_trailing_buy": 0.4,
+	    "DEFAULT_max_buy_spread": 0.6,
+	    "DEFAULT_rebuy_timeout": 15,
+    //SELL STRATEGY
+	    "DEFAULT_A_sell_strategy": "GAIN",
+	    "DEFAULT_A_sell_value": 0.55,
+	    "DEFAULT_trailing_profit": 0.1,
             },
-            "DCAProperties": {
+	"DCAProperties": {
             "DEFAULT_DCA_ignore_sell_only_mode": false
             }
         },
@@ -283,6 +291,7 @@
             "DEFAULT_trailing_profit": 0.01,
 	    "DEFAULT_max_buy_spread": 2,
 	    "max_trading_pairs": 2,
+	    "DEFAULT_rebuy_timeout": 15,
     
         //SOM
             "DEFAULT_sell_only_mode_enabled": true
@@ -331,7 +340,6 @@
         ],
         "PairsProperties": {
           //User Configuration Needed
-          //User Configuration Needed
             "DEFAULT_sell_only_mode_enabled": false,
             "max_trading_pairs": 2,
           
@@ -355,6 +363,11 @@
         //Trailing should take us the rest of the way to the bottom of the Trade Cycle
             "DEFAULT_trailing_buy": 0.3,
 	    "DEFAULT_max_buy_spread": 1.0
+	    "DEFAULT_rebuy_timeout": 15,
+	//SELL STRAT
+	    "DEFAULT_A_sell_strategy": "GAIN",
+	    "DEFAULT_A_sell_value": 0.5,
+	    "DEFAULT_trailing_profit": 0.01
         },
         "DCAProperties": {
           "DEFAULT_DCA_ignore_sell_only_mode": false
@@ -364,10 +377,23 @@
         "SettingName": "Default",
         "Triggers": [],
         "PairsProperties": {
-	 "File": "PAIRS.properties"
+     //BUY STRAT
+	"max_trading_pairs": 2,
+	"DEFAULT_max_buy_spread": 0.5,
+	"DEFAULT_rebuy_timeout": 5,
+	"DEFAULT_A_buy_strategy": "EMAGAIN",
+	"DEFAULT_A_buy_value": -0.35,
+	"DEFAULT_A_buy_on_first_signal": false,
+	"DEFAULT_B_buy_strategy": "RSI",
+	"DEFAULT_B_buy_value": 35.5,
+	"DEFAULT_trailing_buy": 0.35,
+     //SELL STRAT
+	"DEFAULT_A_sell_strategy": "GAIN",
+	"DEFAULT_A_sell_value": 0.5,
+	"DEFAULT_trailing_profit": 0.3
         },
         "DCAProperties": {
-          "File": "DCA.properties"
+        "File": "DCA.properties"
         },
         "IndicatorsProperties": {
         "SOM_trigger_length": 288,
@@ -423,9 +449,11 @@
         }	
         ],
         "PairsProperties": {
+	    "rebuy_timeout": 10,
             "DCA_enabled": false,
             "sell_only_mode_enabled": true,
-            "A_sell_value": 0.4,
+            "A_sell_strategy": "GAIN",    
+	    "A_sell_value": 0.4,
             "trailing_profit": 0.01,
 	    "max_buy_spread": 1.0
             },
@@ -503,7 +531,13 @@
             "D_buy_value": 50,
             "D_buy_value_limit": 0.0,
         //Trailing should take us the rest of the way to the bottom of the Trade Cycle
-            "trailing_buy": 0.3
+            "trailing_buy": 0.3,
+	    "max_buy_spread": 0.5,
+	    "rebuy_timeout": 0,
+	    "A_sell_strategy": "GAIN",
+	    "A_sell_value": 0.4,
+	    "trailing_profit": 0.01,
+	    "sell_only_mode_enabled": false
             }
         },
         {
@@ -535,19 +569,14 @@
             "MarketTrendName": "Exchange21h",
             "MarketTrendRelation": "Absolute",
             "MinChange": 4.00
-            },
-            {
-            "MarketTrendName": "Exchange24h",
-            "MarketTrendRelation": "Absolute",
-            "MinChange": 4.00
-            }          
+            }        
         ],
         "OffTriggers": [
-	       {
+	   {
            "MarketTrendName": "Exchange5m",
            "MarketTrendRelation": "Absolute",
            "MaxChange": 0.5
-	       }
+	   }
 	   ],
         "PairsProperties": {
         //Are we at the bottom of the trade cycle?
@@ -564,13 +593,15 @@
         //Set the amount of minutes that the bot is not allowed to buy a coin after it was sold.
             "rebuy_timeout": 10,
             "A_sell_strategy": "GAIN",
-            "A_sell_value": 2.0
+            "A_sell_value": 2.0,
+	    "trailing_profit": 0.8,
+	    "sell_only_mode_enabled": false
             }
         },
         {
         "SettingName": "MidSupportProfitAdj",
         "TriggerConnection": "AND",
-        "StopProcessWhenTriggered": true,
+        "StopProcessWhenTriggered": false,
         "Triggers": [
           {
             "MarketTrendName": "Exchange1h",
@@ -596,16 +627,53 @@
         "OffTriggers": [],
         "PairsProperties": {
             "trailing_profit": 0.8,
-	    "max_buy_spread": 1.0
+	    "max_buy_spread": 1.0,
+	    "rebuy_timeout": 0,
+	    "A_sell_strategy": "GAIN",
+ 	    "A_sell_value": 0.5,
+	    "trailing_profit": 0.8,
+	    "sell_only_mode_enabled": false,
+	//BUY STRAT
+	    "A_buy_strategy": "EMAGAIN",
+	    "A_buy_value": -0.35,
+	    "A_buy_on_first_signal": false,
+	    "B_buy_strategy": "RSI",
+	    "B_buy_value": 35.5,
+	    "trailing_buy": 0.35
             },
         "DCAProperties": {
             "DCA_trailing_profit": 0.50
-            }
+            },
+	"IndicatorsProperties": {
+        "SOM_trigger_length": 288,
+	"RSI_candle_period": 3600,
+	"RSI_length": 24,
+	"BB_candle_period": 900,
+	"BB_length": 96,
+	"BB_std": 2,
+	"STOCH_candle_period": 300,
+	"STOCH_length": 14,
+	"SMA_candle_period": 3600,
+	"SMA_fast_length": 3,
+	"SMA_slow_length": 24,
+	"EMA_candle_period": 3600,
+	"EMA_fast_length": 18,
+	"EMA_slow_length": 64,
+	//Not used
+	"MACD_candle_period": 300,
+	"MACD_fast_length": 12,
+	"MACD_slow_length": 26,
+	"MACD_signal": 9,
+	//Not used
+	"OBV_candle_period": 300,
+	"OBV_length": 5,
+	"OBV_signal": 1
+        }
         },
         {
         "SettingName": "ShortSupportProfitAdj",
         "TriggerConnection": "AND",
-        "StopProcessWhenTriggered": true,
+        "StopProcessWhenTriggered": false,
         "Triggers": [
           {
             "MarketTrendName": "Exchange30m",
@@ -626,12 +694,49 @@
         "OffTriggers": [],
         "PairsProperties": {
             "trailing_profit": 0.50,
-	    "max_buy_spread": 1.0
+	    "max_buy_spread": 1.0,
+	    "rebuy_timeout": 0,
+	    "A_sell_strategy": "GAIN",
+ 	    "A_sell_value": 0.5,
+	    "trailing_profit": 0.65,
+	    "sell_only_mode_enabled": false,
+	//BUY STRAT
+	    "A_buy_strategy": "EMAGAIN",
+	    "A_buy_value": -0.35,
+	    "A_buy_on_first_signal": false,
+	    "B_buy_strategy": "RSI",
+	    "B_buy_value": 35.5,
+	    "trailing_buy": 0.35
             },
         "DCAProperties": {
             "DCA_trailing_profit": 0.42
-            }
-        } 
+            },
+	"IndicatorsProperties": {
+        "SOM_trigger_length": 288,
+	"RSI_candle_period": 3600,
+	"RSI_length": 24,
+	"BB_candle_period": 900,
+	"BB_length": 96,
+	"BB_std": 2,
+	"STOCH_candle_period": 300,
+	"STOCH_length": 14,
+	"SMA_candle_period": 3600,
+	"SMA_fast_length": 3,
+	"SMA_slow_length": 24,
+	"EMA_candle_period": 3600,
+	"EMA_fast_length": 18,
+	"EMA_slow_length": 64,
+//Not used
+	"MACD_candle_period": 300,
+	"MACD_fast_length": 12,
+	"MACD_slow_length": 26,
+	"MACD_signal": 9,
+//Not used
+	"OBV_candle_period": 300,
+	"OBV_length": 5,
+	"OBV_signal": 1
+        }
+       } 
     ]
   }
 }
