@@ -290,6 +290,8 @@
             "DEFAULT_A_sell_strategy": "GAIN",
             "DEFAULT_A_sell_value": 0.3,
             "DEFAULT_trailing_profit": 0.01,
+	    "DEFAULT_max_buy_spread": 2,
+	    "max_trading_pairs": 2
     
         //SOM
             "DEFAULT_sell_only_mode_enabled": true
@@ -340,7 +342,7 @@
           //User Configuration Needed
           //User Configuration Needed
             "DEFAULT_sell_only_mode_enabled": false,
-            "max_trading_pairs": 4,
+            "max_trading_pairs": 2,
           
     //BUY STRATEGY
         //Do we have a Buy Signal?
@@ -360,7 +362,8 @@
             "DEFAULT_D_buy_value": 50,
             "DEFAULT_D_buy_value_limit": 0.0,
         //Trailing should take us the rest of the way to the bottom of the Trade Cycle
-            "DEFAULT_trailing_buy": 0.3
+            "DEFAULT_trailing_buy": 0.3,
+	    "DEFAULT_max_buy_spread": 1.0
         },
         "DCAProperties": {
           "DEFAULT_DCA_ignore_sell_only_mode": false
@@ -370,13 +373,35 @@
         "SettingName": "Default",
         "Triggers": [],
         "PairsProperties": {
-        "File": "PAIRS.properties",
+	 "File": "PAIRS.properties"
         },
         "DCAProperties": {
           "File": "DCA.properties"
         },
         "IndicatorsProperties": {
-          "File": "INDICATORS.properties"
+        "SOM_trigger_length": 288,
+	"RSI_candle_period": 3600,
+	"RSI_length": 24,
+	"BB_candle_period": 900,
+	"BB_length": 96,
+	"BB_std": 2,
+	"STOCH_candle_period": 300,
+	"STOCH_length": 14,
+	"SMA_candle_period": 3600,
+	"SMA_fast_length": 3,
+	"SMA_slow_length": 24,
+	"EMA_candle_period": 3600,
+	"EMA_fast_length": 18,
+	"EMA_slow_length": 64,
+//Not used
+	"MACD_candle_period": 300,
+	"MACD_fast_length": 12,
+	"MACD_slow_length": 26,
+	"MACD_signal": 9,
+//Not used
+	"OBV_candle_period": 300,
+	"OBV_length": 5,
+	"OBV_signal": 1
         }
       }
     ],
@@ -385,7 +410,7 @@
        {
         "SettingName": "SOMCoins",
         "TriggerConnection": "AND",
-	    "OffTriggerConnection": "OR",
+	"OffTriggerConnection": "OR",
         "StopProcessWhenTriggered": true,
         "Triggers": [
             {
@@ -410,7 +435,8 @@
             "DCA_enabled": false,
             "sell_only_mode_enabled": true,
             "A_sell_value": 0.4,
-            "trailing_profit": 0.01
+            "trailing_profit": 0.01,
+	    "max_buy_spread": 1.0
             },
         "DCAProperties": {
             "DCA_trailing_profit": 0.01
@@ -593,7 +619,8 @@
         ],
         "OffTriggers": [],
         "PairsProperties": {
-            "trailing_profit": 0.8
+            "trailing_profit": 0.8,
+	    "max_buy_spread": 1.0
             },
         "DCAProperties": {
             "DCA_trailing_profit": 0.50
@@ -622,7 +649,8 @@
         ],
         "OffTriggers": [],
         "PairsProperties": {
-            "trailing_profit": 0.50
+            "trailing_profit": 0.50,
+	    "max_buy_spread": 1.0
             },
         "DCAProperties": {
             "DCA_trailing_profit": 0.42
