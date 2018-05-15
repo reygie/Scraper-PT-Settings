@@ -407,7 +407,7 @@
             {
             "MarketTrendName": "Exchange24h",
             "MarketTrendRelation": "Absolute",
-            "MaxChange": -3.99
+            "MaxChange": -4.99
             }             
         ],
         "OffTriggers": [
@@ -480,7 +480,7 @@
             {
             "MarketTrendName": "Exchange24h",
 	        "MarketTrendRelation": "Absolute",
-            "MaxChange": -4.00
+            "MaxChange": -5.00
             }          
         ],
         "OffTriggers": [],
