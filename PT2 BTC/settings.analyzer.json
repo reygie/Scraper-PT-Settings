@@ -24,7 +24,7 @@
         {
           "Name": "BTC5m",
           "Platform": "Exchange",
-          "AllowedMarkets": "BTC",
+          "AllowedMarkets": "BTCUSDT",
           "MaxMarkets": 1,
           "TrendMinutes": 5,
           "DisplayOnMarketAnalyzerList": true,
@@ -33,7 +33,7 @@
 		  {
           "Name": "ETH15m",
           "Platform": "Exchange",
-          "AllowedMarkets": "ETH",
+          "AllowedMarkets": "ETHBTC",
           "MaxMarkets": 1,
           "TrendMinutes": 15,
           "DisplayOnMarketAnalyzerList": false,
@@ -66,18 +66,9 @@
            {
           "Name": "BTC15m",
           "Platform": "Exchange",
-          "AllowedMarkets": "BTC",
+          "AllowedMarkets": "BTCUSDT",
           "MaxMarkets": 1,
           "TrendMinutes": 15,
-          "DisplayOnMarketAnalyzerList": false,
-          "DisplayGraph": false
-        },
-           {
-          "Name": "ETH3h",
-          "Platform": "Exchange",
-          "AllowedMarkets": "ETH",
-          "MaxMarkets": 1,
-          "TrendMinutes": 180,
           "DisplayOnMarketAnalyzerList": false,
           "DisplayGraph": false
         },
@@ -85,7 +76,7 @@
         {
           "Name": "BTC3h",
           "Platform": "Exchange",
-          "AllowedMarkets": "BTC",
+          "AllowedMarkets": "BTCUSDT",
           "MaxMarkets": 1,
           "TrendMinutes": 180,
           "DisplayOnMarketAnalyzerList": false,
@@ -94,7 +85,7 @@
         {
           "Name": "BTC24h",
           "Platform": "Exchange",
-          "AllowedMarkets": "BTC",
+          "AllowedMarkets": "BTCUSDT",
           "MaxMarkets": 1,
           "TrendMinutes": 1440
         },
