@@ -23,8 +23,8 @@
       "MarketTrends": [
         {
           "Name": "BTC5m",
-          "Platform": "Exchange",
-          "AllowedMarkets": "BTCUSDT",
+          "Platform": "CoinMarketCap",
+          "AllowedMarkets": "BTC",
           "MaxMarkets": 1,
           "TrendMinutes": 5,
           "DisplayOnMarketAnalyzerList": true,
@@ -65,8 +65,8 @@
         },
            {
           "Name": "BTC15m",
-          "Platform": "Exchange",
-          "AllowedMarkets": "BTCUSDT",
+          "Platform": "CoinMarketCap",
+          "AllowedMarkets": "BTC",
           "MaxMarkets": 1,
           "TrendMinutes": 15,
           "DisplayOnMarketAnalyzerList": false,
@@ -75,8 +75,8 @@
 // Default from NS - Changed MainCurrency wording to BTC
         {
           "Name": "BTC3h",
-          "Platform": "Exchange",
-          "AllowedMarkets": "BTCUSDT",
+          "Platform": "CoinMarketCap",
+          "AllowedMarkets": "BTC",
           "MaxMarkets": 1,
           "TrendMinutes": 180,
           "DisplayOnMarketAnalyzerList": false,
@@ -84,8 +84,8 @@
         },
         {
           "Name": "BTC24h",
-          "Platform": "Exchange",
-          "AllowedMarkets": "BTCUSDT",
+          "Platform": "CoinMarketCap",
+          "AllowedMarkets": "BTC",
           "MaxMarkets": 1,
           "TrendMinutes": 1440
         },
