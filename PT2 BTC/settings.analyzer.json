@@ -512,21 +512,6 @@
         "StopProcessWhenTriggered": false,
         "Triggers": [
             {
-            "MarketTrendName": "Exchange10m",
-            "MarketTrendRelation": "Absolute",
-            "MinChange": 2.0
-            },
-            {
-            "MarketTrendName": "Exchange1h",
-            "MarketTrendRelation": "Absolute",
-            "MinChange": 2.0
-            }, 
-            {
-            "MarketTrendName": "Exchange3h",
-            "MarketTrendRelation": "Absolute",
-            "MinChange": 3.0
-            },  
-            {
             "MarketTrendName": "Exchange6h",
             "MarketTrendRelation": "Absolute",
             "MinChange": 2.85
