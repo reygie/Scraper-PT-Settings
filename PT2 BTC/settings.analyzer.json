@@ -192,6 +192,40 @@
           "DEFAULT_DCA_ignore_sell_only_mode": false
         }
       },
+      {
+        "SettingName": "Sideways Settings",
+        "TriggerConnection": "OR",
+        "Triggers": [ 
+          {
+            "MarketTrendName": "BTC3h",
+            "MaxChange": 2.99,
+            "MinChage": 0.01
+          },
+          {
+            "MarketTrendName": "BTC24h",
+            "MaxChange": 3.99,
+            "MinChange": 0.01
+          }
+        ],
+        "PairsProperties": {
+          //User Configuration Needed
+          "DEFAULT_sell_only_mode_enabled": false,
+          "max_trading_pairs": 2,
+          
+          //Buy
+          "DEFAULT_A_buy_strategy": "RSI",
+          "DEFAULT_A_buy_value": 35.50,
+          "DEFAULT_B_buy_strategy": "LOWBB",
+          "DEFAULT_B_buy_value": -10.00,
+          "DEFAULT_B_buy_value_limit": -35.00,
+          "DEFAULT_C_buy_strategy": "STOCH",
+          "DEFAULT_C_buy_value": 20.00,        
+          "DEFAULT_trailing_buy": 0.50
+        },
+        "DCAProperties": {
+          "DEFAULT_DCA_ignore_sell_only_mode": false
+        }
+      },
         //BTC Down Trend Settings
         {
         "SettingName": "BTCDOWNTrendWarning",
@@ -338,12 +372,13 @@
        {
         "SettingName": "SOMCoins",
         "TriggerConnection": "AND",
+	"OffTriggerConnection": "OR",
         "StopProcessWhenTriggered": true,
         "Triggers": [
           {
             "MarketTrendName": "Exchange24h",
             "MarketTrendRelation": "Absolute",
-            "MaxChange": -2.0
+            "MaxChange": -3.0
           }             
         ],
         "OffTriggers": [
@@ -351,7 +386,12 @@
           "MarketTrendName": "BTC5m",
           "MarketTrendRelation": "Absolute",
           "MinChange": 0.0
-        }
+        },
+	{
+          "MarketTrendName": "Exchange5m",
+          "MarketTrendRelation": "Absolute",
+          "MinChange": 0.0
+        }	
         ],
         "PairsProperties": {
         "DCA_enabled": false,
@@ -378,30 +418,36 @@
       {
         "SettingName": "DowntrendingPair",
         "TriggerConnection": "OR",
-        "StopProcessWhenTriggered": true,
+        "StopProcessWhenTriggered": false,
         "Triggers": [
           {
             "MarketTrendName": "Exchange6h",
+	    "MarketTrendRelation": "Absolute",
             "MaxChange": -2.85
           },
           {
             "MarketTrendName": "Exchange11h",
+	    "MarketTrendRelation": "Absolute",
             "MaxChange": -4.00
           },
           {
             "MarketTrendName": "Exchange15h",
+	    "MarketTrendRelation": "Absolute",
             "MaxChange": -4.00
           },
           {
             "MarketTrendName": "Exchange18h",
+	    "MarketTrendRelation": "Absolute",
             "MaxChange": -4.00
           },
           {
             "MarketTrendName": "Exchange21h",
+	    "MarketTrendRelation": "Absolute",
             "MaxChange": -4.00
           },
           {
             "MarketTrendName": "Exchange24h",
+	    "MarketTrendRelation": "Absolute",
             "MaxChange": -4.00
           }          
         ],
@@ -415,7 +461,74 @@
           "B_buy_value_limit": -35.00,
           "C_buy_strategy": "STOCH",
           "C_buy_value": 20.00,   
-          "trailing_buy": 0.50
+          "trailing_buy": 0.50,
+	  "trailing_profit": 0.01
+        }
+      },
+      {
+        "SettingName": "SkyRocketingPair",
+        "TriggerConnection": "OR",
+        "StopProcessWhenTriggered": true,
+        "Triggers": [
+          {
+            "MarketTrendName": "Exchange10m",
+	    "MarketTrendRelation": "Absolute",
+            "MinChange": 2.0
+          },
+	  {
+            "MarketTrendName": "Exchange1h",
+	    "MarketTrendRelation": "Absolute",
+            "MinChange": 2.0
+          }, 
+	  {
+            "MarketTrendName": "Exchange3h",
+	    "MarketTrendRelation": "Absolute",
+            "MinChange": 3.0
+          },  
+	  {
+            "MarketTrendName": "Exchange6h",
+	    "MarketTrendRelation": "Absolute",
+            "MinChange": 2.85
+          },
+          {
+            "MarketTrendName": "Exchange11h",
+	    "MarketTrendRelation": "Absolute",
+            "MinChange": 2.00
+          },
+          {
+            "MarketTrendName": "Exchange15h",
+	    "MarketTrendRelation": "Absolute",
+            "MinChange": 2.00
+          },
+          {
+            "MarketTrendName": "Exchange18h",
+	    "MarketTrendRelation": "Absolute",
+            "MinChange": 4.00
+          },
+          {
+            "MarketTrendName": "Exchange21h",
+	    "MarketTrendRelation": "Absolute",
+            "MinChange": 4.00
+          },
+          {
+            "MarketTrendName": "Exchange24h",
+	    "MarketTrendRelation": "Absolute",
+            "MinChange": 4.00
+          }          
+        ],
+        "OffTriggers": [
+	{
+          "MarketTrendName": "Exchange5m",
+          "MarketTrendRelation": "Absolute",
+          "MinChange": 0.5
+	}
+	],
+        "PairsProperties": {
+          "DEFAULT_trading_enabled": true,
+          "DEFAULT_sell_only_mode_enabled": false,
+	  "DEFAULT_A_sell_strategy": "GAIN",
+          "DEFAULT_A_sell_value": 1.2,
+	  "DEFAULT_trailing_profit": 0.5
         }
       },
       {
