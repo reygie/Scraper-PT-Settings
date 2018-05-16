@@ -366,7 +366,7 @@
             "DEFAULT_D_buy_value_limit": 0.0,
         //Trailing should take us the rest of the way to the bottom of the Trade Cycle
             "DEFAULT_trailing_buy": 0.3,
-	    "DEFAULT_max_buy_spread": 1.0
+	    "DEFAULT_max_buy_spread": 1.0,
 	    "DEFAULT_rebuy_timeout": 15,
 	//SELL STRAT
 	    "DEFAULT_A_sell_strategy": "GAIN",
