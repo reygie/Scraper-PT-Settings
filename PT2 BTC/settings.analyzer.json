@@ -248,47 +248,18 @@
             }
       },
 //Global Default
-      {
+       {
         "SettingName": "Default",
-        "TriggerConnection": "OR",
-        "Triggers": [ 
-			{
-            "MarketTrendName": "Exchange3h",
-            "MaxChange": 2.99,
-            "MinChage": -2.99
-			},
-			{
-            "MarketTrendName": "BTC3h",
-            "MaxChange": 2.99,
-            "MinChage": -2.99
-			},
-			{
-            "MarketTrendName": "BTC24h",
-            "MaxChange": 2.99,
-            "MinChange": -2.99
-			},
-	    {
-            "MarketTrendName": "Exchange24h",
-            "MaxChange": 4.99,
-            "MinChage": -4.99
-			}
-		  ],
         "PairsProperties": {
-        //User Configuration Needed
-            "DEFAULT_sell_only_mode_enabled": false,
-            "max_trading_pairs": 2,
-          
-		//BUY STRATEGY
-        //Trailing should take us the rest of the way to the bottom of the Trade Cycle
-			"DEFAULT_rebuy_timeout": 15,
-		//SELL STRATEGY
-			"DEFAULT_A_sell_value": 0.55,
-			"DEFAULT_trailing_profit": 0.25,
-            },
-			"DCAProperties": {
-            "DEFAULT_DCA_ignore_sell_only_mode": false
-            }
+          "File": "PAIRS.properties"
+        },
+        "DCAProperties": {
+          "File": "DCA.properties"
+        },
+        "IndicatorsProperties": {
+          "File": "INDICATORS.properties"
         }
+      }
     ],
 //SINGLE MARKET SETTINGS
     "SingleMarketSettings": [
