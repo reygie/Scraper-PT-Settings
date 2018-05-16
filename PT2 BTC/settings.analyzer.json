@@ -308,7 +308,7 @@
             "DEFAULT_DCA_enabled": false
             }
         },
-//Global Exchange Top 5 0Downtrend
+//Global Exchange Top 50 Downtrend
       {
         "SettingName": "Global Exchange Top 50 Downtrend",
         "TriggerConnection": "OR",
@@ -383,7 +383,7 @@
       },
 //Global Default
       {
-        "SettingName": "Global Default",
+        "SettingName": "Default",
         "Triggers": [],
         "PairsProperties": {
      //BUY STRAT
