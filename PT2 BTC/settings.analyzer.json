@@ -419,12 +419,12 @@
 	"EMA_candle_period": 3600,
 	"EMA_fast_length": 18,
 	"EMA_slow_length": 64,
-//Not used
+	//Not used
 	"MACD_candle_period": 300,
 	"MACD_fast_length": 12,
 	"MACD_slow_length": 26,
 	"MACD_signal": 9,
-//Not used
+	//Not used
 	"OBV_candle_period": 300,
 	"OBV_length": 5,
 	"OBV_signal": 1
@@ -433,9 +433,9 @@
     ],
 //SINGLE MARKET SETTINGS
     "SingleMarketSettings": [
+//SOM Coins
        {
         "SettingName": "SOM Coins",
-        "TriggerConnection": "AND",
 	"OffTriggerConnection": "OR",
         "StopProcessWhenTriggered": true,
         "Triggers": [
@@ -470,6 +470,7 @@
             "DCA_trailing_profit": 0.01
             }
         },
+//Blacklist New Coins
         {
         "SettingName": "Blacklist New Coins",
         "StopProcessWhenTriggered": true,
@@ -484,6 +485,7 @@
           "DCA_enabled": false
           }
         },
+//Down Trending Pair
       {
         "SettingName": "Down Trending Pair",
         "TriggerConnection": "OR",
@@ -549,6 +551,7 @@
 	    "sell_only_mode_enabled": false
             }
         },
+//Sky Rocketing Pair
         {
         "SettingName": "Sky Rocketing Pair",
         "TriggerConnection": "OR",
@@ -607,6 +610,7 @@
 	    "sell_only_mode_enabled": false
             }
         },
+//Mid Support Profit Adjustment
         {
         "SettingName": "Mid Support Profit Adjustment",
         "TriggerConnection": "AND",
@@ -677,7 +681,6 @@
 	"OBV_candle_period": 300,
 	"OBV_length": 5,
 	"OBV_signal": 1
-        }
         }
        } 
     ]
