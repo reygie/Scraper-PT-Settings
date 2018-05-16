@@ -217,13 +217,14 @@
             "MarketTrendName": "Exchange3h",
             "MaxChange": -3.0
 	    },
+		{
 	    "MarketTrendName": "BTC3h",
-            "MaxChange": -3.0,
+            "MaxChange": -3.0
 	    },
 	    {
             "MarketTrendName": "BTC24h",
             "MaxChange": -5.0,
-	    }
+	    },
 	    {
             "MarketTrendName": "Exchange24h",
             "MarketTrendRelation": "Absolute",
@@ -240,7 +241,7 @@
 			"DEFAULT_rebuy_timeout": 60,
 		//SELL STRATEGY
 			"DEFAULT_A_sell_value": 0.4,
-			"DEFAULT_trailing_profit": 0.01,
+			"DEFAULT_trailing_profit": 0.01
             },
 			"DCAProperties": {
             "DEFAULT_DCA_ignore_sell_only_mode": false
