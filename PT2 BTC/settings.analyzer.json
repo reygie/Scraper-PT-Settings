@@ -204,7 +204,9 @@
 			"DEFAULT_trailing_profit": 0.8
             },
 			"DCAProperties": {
-            "DEFAULT_DCA_ignore_sell_only_mode": false
+            "DEFAULT_DCA_ignore_sell_only_mode": false,
+	    "DEFAULT_DCA_A_sell_value": 1.0,
+	    "DEFAULT_DCA_trailing_profit": 0.6
             }
       },
 //BTC Down Trend Settings
@@ -377,8 +379,8 @@
 			"sell_only_mode_enabled": false
             },
 	"DCAProperties": {
-	    "DCA_A_sell_value": 1.2,
-            "DCA_trailing_profit": 0.50
+	    "DCA_A_sell_value": 1.1,
+            "DCA_trailing_profit": 0.60
             },
 	"IndicatorsProperties": {
 		"File": "INDICATOR.properties"
