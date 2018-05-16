@@ -158,9 +158,10 @@
       ]
     },
     "GlobalSettings": [
-      //BTC UP Trend Settings
+      //BTC UP Trend Setting
+//Global BTC Or Coin Sky Rocketing
       {
-        "SettingName": "BTCOrCoinSkyRocketing",
+        "SettingName": "Global BTC Or Coin Sky Rocketing",
         "TriggerConnection": "OR",
         "Triggers": [
           {
@@ -207,8 +208,9 @@
             }
       },
     //BTC Down Trend Settings
+//Global Sideways
       {
-        "SettingName": "Sideways Settings",
+        "SettingName": "Global Sideways",
         "TriggerConnection": "OR",
         "Triggers": [ 
           {
@@ -267,8 +269,9 @@
             "DEFAULT_DCA_ignore_sell_only_mode": false
             }
         },
+//Global BTC DOWN Trend Critical
         {
-        "SettingName": "BTCDOWNTrendCritical",
+        "SettingName": "Global BTC DOWN Trend Critical",
         "TriggerConnection": "OR",
         "Triggers": [
           {
@@ -305,8 +308,9 @@
             "DEFAULT_DCA_enabled": false
             }
         },
+//Global Exchange Top 5 0Downtrend
       {
-        "SettingName": "ExchangeTop50Downtrend",
+        "SettingName": "Global Exchange Top 50 Downtrend",
         "TriggerConnection": "OR",
         "Triggers": [
           {
@@ -377,8 +381,9 @@
           "DEFAULT_DCA_ignore_sell_only_mode": false
         }
       },
+//Global Default
       {
-        "SettingName": "Default",
+        "SettingName": "Global Default",
         "Triggers": [],
         "PairsProperties": {
      //BUY STRAT
@@ -429,7 +434,7 @@
 //SINGLE MARKET SETTINGS
     "SingleMarketSettings": [
        {
-        "SettingName": "SOMCoins",
+        "SettingName": "SOM Coins",
         "TriggerConnection": "AND",
 	"OffTriggerConnection": "OR",
         "StopProcessWhenTriggered": true,
@@ -466,7 +471,7 @@
             }
         },
         {
-        "SettingName": "BlacklistNewCoins",
+        "SettingName": "Blacklist New Coins",
         "StopProcessWhenTriggered": true,
         "Triggers": [
           {
@@ -480,7 +485,7 @@
           }
         },
       {
-        "SettingName": "DowntrendingPair",
+        "SettingName": "Down Trending Pair",
         "TriggerConnection": "OR",
         "StopProcessWhenTriggered": true,
         "Triggers": [
@@ -545,7 +550,7 @@
             }
         },
         {
-        "SettingName": "SkyRocketingPair",
+        "SettingName": "Sky Rocketing Pair",
         "TriggerConnection": "OR",
         "StopProcessWhenTriggered": false,
         "Triggers": [
@@ -603,7 +608,7 @@
             }
         },
         {
-        "SettingName": "MidSupportProfitAdj",
+        "SettingName": "Mid Support Profit Adjustment",
         "TriggerConnection": "AND",
         "StopProcessWhenTriggered": false,
         "Triggers": [
@@ -675,7 +680,7 @@
         }
         },
         {
-        "SettingName": "ShortSupportProfitAdj",
+        "SettingName": "Short Support Profit Adjustment",
         "TriggerConnection": "AND",
         "StopProcessWhenTriggered": false,
         "Triggers": [
