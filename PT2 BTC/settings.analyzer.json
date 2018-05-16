@@ -214,22 +214,22 @@
           {
             "MarketTrendName": "Exchange3h",
             "MaxChange": 2.99,
-            "MinChage": -1.99
+            "MinChage": -2.99
           },
           {
             "MarketTrendName": "Exchange24h",
             "MaxChange": 4.99,
-            "MinChage": -1.99
+            "MinChage": -4.99
           },
           {
             "MarketTrendName": "BTC3h",
             "MaxChange": 2.99,
-            "MinChage": -1.99
+            "MinChage": -2.99
           },
           {
             "MarketTrendName": "BTC24h",
             "MaxChange": 1.0,
-            "MinChange": -2.0
+            "MinChange": -2.99
           }
         ],
         "PairsProperties": {
@@ -274,15 +274,19 @@
           {
             "MarketTrendName": "BTC24h",
             "MaxChange": -3.0
-          },
-          {
-            "MarketTrendName": "BTC5m_average",
-            "MaxChange": -1.0
-          },  
+          }, 
           {
             "MarketTrendName": "BTC3h",
-            "MaxChange": -2.0
+            "MaxChange": -3.0
           },
+          {
+            "MarketTrendName": "Exchange3h",
+            "MaxChange": -3.0
+          },
+          {
+            "MarketTrendName": "Exchange24h",
+            "MaxChange": -5.0
+          }
         ],
         "PairsProperties": {
     //SELL STRATEGY
