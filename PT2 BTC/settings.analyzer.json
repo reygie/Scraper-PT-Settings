@@ -210,7 +210,7 @@
 //BTC Down Trend Settings
 // Global Sell-Only-Mode
 	{
-        "SettingName": "Global Sell-Only-Mode",
+        "SettingName": "Global Sell Only Mode",
         "TriggerConnection": "OR",
         "Triggers": [ 
 	    {
@@ -234,22 +234,19 @@
         "PairsProperties": {
         //User Configuration Needed
             "DEFAULT_sell_only_mode_enabled": true,
-            "max_trading_pairs": 2,
-          
-		//BUY STRATEGY
-        //Trailing should take us the rest of the way to the bottom of the Trade Cycle
-			"DEFAULT_rebuy_timeout": 60,
-		//SELL STRATEGY
-			"DEFAULT_A_sell_value": 0.4,
-			"DEFAULT_trailing_profit": 0.01
+	    "DEFAULT_rebuy_timeout": 60,
+	//SELL STRATEGY
+	    "DEFAULT_A_sell_value": 0.4,
+	    "DEFAULT_trailing_profit": 0.01
             },
-			"DCAProperties": {
+	"DCAProperties": {
             "DEFAULT_DCA_ignore_sell_only_mode": false
             }
       },
 //Global Default
        {
         "SettingName": "Default",
+	"Triggers": [],
         "PairsProperties": {
           "File": "PAIRS.properties"
         },
@@ -266,10 +263,11 @@
 //SOM Coins
       {
         "SettingName": "SOM Coins",
-		"OffTriggerConnection": "OR",
-        "StopProcessWhenTriggered": true,
+	    "TriggerConnection": "OR",
+	    "OffTriggerConnection": "OR",
+            "StopProcessWhenTriggered": true,
         "Triggers": [
-			{
+	   {
             "MarketTrendName": "Exchange3h",
             "MarketTrendRelation": "Absolute",
             "MaxChange": -3.0
@@ -294,7 +292,6 @@
 		  ],
         "PairsProperties": {
 			"rebuy_timeout": 30,
-            "DCA_enabled": false,
             "sell_only_mode_enabled": true,   
 			"A_sell_value": 0.4,
             "trailing_profit": 0.01,
@@ -355,7 +352,7 @@
 			{
 			"MarketTrendName": "Exchange5m",
 			"MarketTrendRelation": "Absolute",
-			"MaxChange": 0.0
+			"MaxChange": 0.5
 			}
 		  ],
         "PairsProperties": {
