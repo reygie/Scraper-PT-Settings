@@ -30,16 +30,7 @@
 			"DisplayOnMarketAnalyzerList": true,
 			"DisplayGraph": false
 			},
-			{
-			"Name": "ETH15m",
-			"Platform": "Exchange",
-			"AllowedMarkets": "ETHBTC",
-			"MaxMarkets": 1,
-			"TrendMinutes": 15,
-			"DisplayOnMarketAnalyzerList": false,
-			"DisplayGraph": false
-			},
-			{
+	      		{
 			"Name": "Exchange5m",
 			"Platform": "Exchange",
 			"MaxMarkets": 50,
@@ -63,7 +54,7 @@
 			"DisplayOnMarketAnalyzerList": true,
 			"DisplayGraph": false
 			},
-           {
+           		{
 			"Name": "BTC15m",
 			"Platform": "CoinMarketCap",
 			"AllowedMarkets": "BTC",
@@ -72,23 +63,16 @@
 			"DisplayOnMarketAnalyzerList": false,
 			"DisplayGraph": false
 			},
-// Default from NS - Changed MainCurrency wording to BTC
-			{
-			"Name": "BTC3h",
-			"Platform": "CoinMarketCap",
-			"AllowedMarkets": "BTC",
+	      		{
+			"Name": "ETH15m",
+			"Platform": "Exchange",
+			"AllowedMarkets": "ETHBTC",
 			"MaxMarkets": 1,
-			"TrendMinutes": 180,
+			"TrendMinutes": 15,
 			"DisplayOnMarketAnalyzerList": false,
 			"DisplayGraph": false
 			},
-			{
-			"Name": "BTC24h",
-			"Platform": "CoinMarketCap",
-			"AllowedMarkets": "BTC",
-			"MaxMarkets": 1,
-			"TrendMinutes": 1440
-			},
+// Default from NS - Changed MainCurrency wording to BTC
 			{
 			"Name": "Exchange30m",
 			"Platform": "Exchange",
@@ -103,12 +87,21 @@
 			"MaxMarkets": 50,
 			"TrendMinutes": 60
 			},
+	      		{
+			"Name": "BTC3h",
+			"Platform": "CoinMarketCap",
+			"AllowedMarkets": "BTC",
+			"MaxMarkets": 1,
+			"TrendMinutes": 180,
+			"DisplayOnMarketAnalyzerList": false,
+			"DisplayGraph": false
+			},
 			{
 			"Name": "Exchange3h",
 			"Platform": "Exchange",
 			"MaxMarkets": 50,
 			"TrendMinutes": 180,
-			"DisplayOnMarketAnalyzerList": false,
+			"DisplayOnMarketAnalyzerList": true,
 			"DisplayGraph": false
 			},
 			{
@@ -148,6 +141,13 @@
 			"TrendMinutes": 1260,
 			"DisplayOnMarketAnalyzerList": false,
 			"DisplayGraph": false
+			},
+	      		{
+			"Name": "BTC24h",
+			"Platform": "CoinMarketCap",
+			"AllowedMarkets": "BTC",
+			"MaxMarkets": 1,
+			"TrendMinutes": 1440
 			},
 			{
 			"Name": "Exchange24h",
@@ -219,11 +219,6 @@
             "MinChage": -2.99
 			},
 			{
-            "MarketTrendName": "Exchange24h",
-            "MaxChange": 4.99,
-            "MinChage": -4.99
-			},
-			{
             "MarketTrendName": "BTC3h",
             "MaxChange": 2.99,
             "MinChage": -2.99
@@ -232,6 +227,11 @@
             "MarketTrendName": "BTC24h",
             "MaxChange": 2.99,
             "MinChange": -2.99
+			},
+	    {
+            "MarketTrendName": "Exchange24h",
+            "MaxChange": 4.99,
+            "MinChage": -4.99
 			}
 		  ],
         "PairsProperties": {
@@ -259,16 +259,16 @@
 		"OffTriggerConnection": "OR",
         "StopProcessWhenTriggered": true,
         "Triggers": [
-            {
-            "MarketTrendName": "Exchange24h",
-            "MarketTrendRelation": "Absolute",
-            "MaxChange": -5.0
-            },
 			{
             "MarketTrendName": "Exchange3h",
             "MarketTrendRelation": "Absolute",
             "MaxChange": -3.0
-            }             
+            },
+	    {
+            "MarketTrendName": "Exchange24h",
+            "MarketTrendRelation": "Absolute",
+            "MaxChange": -5.0
+            }
           ],
         "OffTriggers": [
 			{
@@ -291,7 +291,7 @@
 			"max_buy_spread": 1.0
             },
 			"DCAProperties": {
-			"DCA_A_sell_value": 0.3,
+			"DCA_A_sell_value": 0.4,
             "DCA_trailing_profit": 0.01
             }
       },
@@ -360,7 +360,7 @@
 	    "C_buy_strategy": "DISABLED",
 	    "D_buy_strategy": "DISABLED",
         //Trailing should take us the rest of the way to the bottom of the Trade Cycle
-            "trailing_buy": 0.75,
+            "trailing_buy": 0.25,
         //Rebuy timeout setting
         //Set the amount of minutes that the bot is not allowed to buy a coin after it was sold.
             "rebuy_timeout": 10,
@@ -368,7 +368,14 @@
             "A_sell_value": 2.0,
 			"trailing_profit": 0.8,
 			"sell_only_mode_enabled": false
-            }
+            },
+	"DCAProperties": {
+	    "DCA_A_sell_value": 1.2,
+            "DCA_trailing_profit": 0.50
+            },
+	"IndicatorsProperties": {
+		"File": "INDICATOR.properties"
+	}
       },
 //Mid Support Profit Adjustment
       {
@@ -379,7 +386,7 @@
 			{
             "MarketTrendName": "Exchange1h",
             "MarketTrendRelation": "Absolute",
-            "MinChange": -3.00
+            "MinChange": -2.00,
 			},        
 			{
             "MarketTrendName": "Exchange6h",
@@ -401,10 +408,12 @@
         "PairsProperties": {
 			"max_buy_spread": 1.0,
 			"rebuy_timeout": 0,
-			"trailing_profit": 0.85,
+			"trailing_profit": 0.8,
 			"sell_only_mode_enabled": false,
+			"A_sell_value": 0.5,
             },
         "DCAProperties": {
+	    "DCA_A_sell_value": 0.5,
             "DCA_trailing_profit": 0.50
             },
 		"IndicatorsProperties": {
@@ -420,7 +429,7 @@
           {
             "MarketTrendName": "Exchange30m",
             "MarketTrendRelation": "Absolute",
-            "MinChange": -2.00
+            "MinChange": -1.00
           },
           {
             "MarketTrendName": "Exchange3h",
@@ -437,10 +446,12 @@
 		"PairsProperties": {
 			"max_buy_spread": 1.0,
 			"rebuy_timeout": 0,
-			"trailing_profit": 0.50
+			"trailing_profit": 0.4,
+			"A_sell_value": 0.6,
         },
 		"DCAProperties": {
-			"DCA_trailing_profit": 0.42
+			"DCA_A_sell_value": 0.5,
+			"DCA_trailing_profit": 0.35
         }
 	  }
     ]
